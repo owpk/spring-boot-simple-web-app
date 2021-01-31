@@ -8,7 +8,7 @@ $ cd docker
 $ docker build -t market:market . 
 $ docker run -p 8080:8595/tcp market:market
 ```
-open brawser go to http://localhost:8080/
+open browser go to http://localhost:8080/
 
 ### Or build it manually 
 1. Install java runtime enviroment
@@ -37,7 +37,7 @@ $ cd target/
 ```
 $ java -jar geek-market-0.0.1-SNAPSHOT.jar
 ```
-open brawser go to http://localhost:8595/
+open browser go to http://localhost:8595/
 
 
 
