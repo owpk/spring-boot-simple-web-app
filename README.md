@@ -4,14 +4,13 @@
 ### Play with docker
 - from project root 
 ```
-$ cd docker
 $ docker build -t market:market . 
 $ docker run -p 8080:8595/tcp market:market
 ```
 open browser go to http://localhost:8080/
 
 ### Or build it manually 
-1. Install java runtime enviroment
+1. Install java runtime environment
 ```
 ubuntu
 $ sudo apt install default-jre
