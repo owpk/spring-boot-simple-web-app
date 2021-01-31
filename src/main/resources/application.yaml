@@ -2,6 +2,7 @@ server:
   port: 8595
   servlet:
     context-path: /
+
 spring:
   datasource:
     driver-class-name: org.h2.Driver
@@ -17,6 +18,6 @@ spring:
     console:
       enabled: true
       settings:
-        web-allow-others: false
+        web-allow-others: true
 jwt:
   secret: tg5g98h45g98h45g9845hg98hf9834345345345r9g8h384y5934yhhtertg
