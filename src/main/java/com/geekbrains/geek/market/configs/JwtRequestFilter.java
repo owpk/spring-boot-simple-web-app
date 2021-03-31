@@ -45,6 +45,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String jwt = null;
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             jwt = authHeader.substring(7);
+            log.info("--- TOKEN " + jwt);
             try {
                 username = jwtTokenUtil.getUsernameFromToken(jwt);
             } catch (ExpiredJwtException e) {
@@ -64,6 +65,10 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 //            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 //            token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 //            SecurityContextHolder.getContext().setAuthentication(token);
+            System.out.println();
+            System.out.println();
+            System.out.println();
+
         }
 
         filterChain.doFilter(request, response);

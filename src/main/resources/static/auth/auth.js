@@ -2,6 +2,7 @@ angular.module('app').controller('authController', function ($scope, $http, $loc
     const contextPath = 'http://localhost:8080';
 
     $scope.tryToAuth = function () {
+        console.log($scope.user);
         $http.post(contextPath + '/auth', $scope.user)
             .then(function successCallback(response) {
                 if (response.data.token) {

@@ -6,6 +6,7 @@ import com.geekbrains.geek.market.dto.JwtResponse;
 import com.geekbrains.geek.market.exceptions.MarketError;
 import com.geekbrains.geek.market.services.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
     private final UserService userService;
     private final JwtTokenUtil jwtTokenUtil;
@@ -25,6 +27,7 @@ public class AuthController {
 
     @PostMapping("/auth")
     public ResponseEntity<?> createAuthToken(@RequestBody JwtRequest authRequest) {
+        log.info("-- AUTH REQUEST {}", authRequest);
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),
                     authRequest.getPassword()));
